@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>
     
-  </title>
-    <link rel="stylesheet" href="E_Commerce.css">
+<link rel="stylesheet" href="E_Commerce.css">
      <div class="header">
         <h1 align="center">Urban Graze Dinner</h1>
         <div class="nav">
@@ -13,8 +11,7 @@
             <a href ="#menu1"><button>Menu </button></a>
             <a href="#contact1"><button>Contact</button></a>
          </div>
-        
-  </div>
+</div>
     <div id="home1" class="container">
       <div class="intro">
           <p>Welcome to <strong>Urban Graze</strong>, where every meal is a story of passion and perfection. Nestled in the heart of the city, we pride ourselves on crafting unforgettable dining experiences that resonate with taste and warmth. Whether you're visiting for a hearty meal or placing an order for delivery, our dedication to excellence shines through every dish.</p>
@@ -218,8 +215,7 @@
             </div>
           </div>
       </div>
-    </div>
-  </div>
+    </div></div>
  
   <div id="contact1" class="container">
     <div class="contact-section">
@@ -239,6 +235,5 @@
     </div>
 </div>
 <img src="thankyou.jpg">
-
 </body>
 </html>
