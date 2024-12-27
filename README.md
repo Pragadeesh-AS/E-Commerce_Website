@@ -217,6 +217,25 @@
           </div>
       </div>
     </div>
+    <div id="cart" class="container mt-5">
+      <h2>Cart</h2>
+      <table class="table table-bordered">
+          <thead>
+              <tr>
+                  <th>Item Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody id="cart-items">
+              <!-- Items added to cart will appear here -->
+          </tbody>
+      </table>
+      <div class="text-end">
+          <button id="checkout-button" class="btn btn-primary">Checkout</button>
+      </div>
+  </div>
  
   <div id="contact1" class="container">
     <div class="contact-section">
