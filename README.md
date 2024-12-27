@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,7 +13,7 @@
             <a href ="#menu1"><button>Menu </button></a>
             <a href="#contact1"><button>Contact</button></a>
          </div>
-        
+<body>        
   </div>
     <div id="home1" class="container">
       <div class="intro">
@@ -26,7 +26,6 @@
   <p>Beyond the plate, we strive to create an ambiance of joy and connection. Our friendly staff, inviting interiors, and seamless service reflect our mission to be more than just a restaurant—we aim to be a cherished part of your daily life. Thank you for making Urban Graze your preferred dining destination.</p>
       </div>
   </div>
-    </div>
     <center>
         <p style="font-weight: 600;color:rgb(255, 255, 255);"></p>
     </center>
@@ -219,7 +218,6 @@
           </div>
       </div>
     </div>
-  </div>
  
   <div id="contact1" class="container">
     <div class="contact-section">
