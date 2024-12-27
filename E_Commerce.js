@@ -1,48 +1,74 @@
-// Cart storage
-const cart = [];
+// Cart array to store selected items
+let cart = [];
 
-// Add product to cart
-function addToCart(productName, price) {
-    const product = { name: productName, price: parseFloat(price) };
-    cart.push(product);
-    alert(`${productName} added to cart!`);
-    updateCartView();
-}
-
-// Update the cart view
-function updateCartView() {
-    const cartContainer = document.getElementById('cart-container');
-    const emptyCartMessage = document.getElementById('empty-cart');
-    cartContainer.innerHTML = ''; // Clear previous items
-
-    if (cart.length === 0) {
-        emptyCartMessage.style.display = 'block';
+// Function to add item to cart
+function addToCart(itemName, itemPrice) {
+    const existingItem = cart.find(item => item.name === itemName);
+    if (existingItem) {
+        existingItem.quantity += 1;
     } else {
-        emptyCartMessage.style.display = 'none';
-
-        let total = 0;
-        cart.forEach((item, index) => {
-            total += item.price;
-            const productRow = document.createElement('div');
-            productRow.className = 'cart-item';
-            productRow.style.marginBottom = '10px';
-            productRow.innerHTML = `
-                <span>${item.name} - ₹${item.price.toFixed(2)}</span>
-                <button style="margin-left: 10px; background-color: #4a4a6d; color: white; border: none; border-radius: 4px; padding: 5px;" onclick="removeFromCart(${index})">Remove</button>
-            `;
-            cartContainer.appendChild(productRow);
-        });
-
-        const totalRow = document.createElement('div');
-        totalRow.className = 'cart-total';
-        totalRow.style.marginTop = '15px';
-        totalRow.innerHTML = `<strong>Total: ₹${total.toFixed(2)}</strong>`;
-        cartContainer.appendChild(totalRow);
+        cart.push({ name: itemName, price: itemPrice, quantity: 1 });
     }
+    renderCart();
+    alert(`${itemName} has been added to your cart.`);
+    console.log("Current Cart:", cart); // Debugging log
 }
 
-// Remove product from cart
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartView();
+// Function to remove an item from the cart
+function removeFromCart(itemName) {
+    cart = cart.filter(item => item.name !== itemName);
+    renderCart();
 }
+
+// Function to render the cart items in the table
+function renderCart() {
+    const cartItems = document.getElementById("cart-items");
+    cartItems.innerHTML = "";
+    cart.forEach(item => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td>${item.quantity}</td>
+            <td><button class="btn btn-danger btn-sm" onclick="removeFromCart('${item.name}')">Remove</button></td>
+        `;
+        cartItems.appendChild(row);
+    });
+}
+
+// Function to handle Buy button click
+function buyNow(itemName, itemPrice) {
+    alert(`Redirecting to payment page for ${itemName}.`);
+    window.location.href = "payment.html"; // Update to your payment page URL
+}
+
+// Attach event listeners to menu items dynamically
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        const itemName = card.querySelector(".card-text").innerText.split("\n")[0];
+        const itemPrice = card.querySelector(".card-text").innerText.split("\n")[1];
+
+        const addToCartButton = card.querySelector(".btn-group .btn-outline-secondary:first-child");
+        const buyButton = card.querySelector(".btn-group .btn-outline-secondary:last-child");
+
+        addToCartButton.addEventListener("click", () => addToCart(itemName, itemPrice));
+        buyButton.addEventListener("click", () => buyNow(itemName, itemPrice));
+    });
+});
+
+// Checkout button functionality
+document.addEventListener("DOMContentLoaded", () => {
+    const checkoutButton = document.getElementById("checkout-button");
+    if (checkoutButton) {
+        checkoutButton.addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+            } else {
+                alert("Proceeding to checkout...");
+                window.location.href = "payment.html"; // Redirect to payment page
+            }
+        });
+    }
+});
