@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -13,8 +12,8 @@
             <a href ="#menu1"><button>Menu </button></a>
             <a href="#contact1"><button>Contact</button></a>
          </div>
+   </div>
 <body>        
-  </div>
     <div id="home1" class="container">
       <div class="intro">
           <p>Welcome to <strong>Urban Graze</strong>, where every meal is a story of passion and perfection. Nestled in the heart of the city, we pride ourselves on crafting unforgettable dining experiences that resonate with taste and warmth. Whether you're visiting for a hearty meal or placing an order for delivery, our dedication to excellence shines through every dish.</p>
